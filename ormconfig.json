@@ -1,12 +1,13 @@
 {
     "type": "postgres",
     "port": 5432,
-    "host": "localhost",
+    "host": "database_ignite",
     "username": "docker",
     "password": "ignite",
     "database": "rentx",
-    "migrations": ["./src/database/migrations/*.ts"],
+    "entities": ["src/modules/accounts/infra/typeorm/entities/*.ts", "src/modules/cars/infra/typeorm/entities/*.ts" ],
+    "migrations": ["./src/shared/infra/typeorm/migrations/*.ts"],
     "cli":{
-        "migrationsDir": "./src/database/migrations"
+        "migrationsDir": "./src/shared/infra/typeorm/migrations"
     }
 }
