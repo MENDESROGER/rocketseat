@@ -1,25 +1,6 @@
-
-
-/*describe("Criar categoria", () => {
-    it("Espero que 2 + 2 seja 4", () => {
-        const soma =  2 + 2;
-        const resultado = 4;
-
-        expect(soma).toBe(resultado);
-    });
-
-    it("Espero que 2 + 2  não seja 5" , () => {
-        const soma =2 + 2;
-        const resultado = 5;
-
-        expect(soma).not.toBe(resultado);
-    })
-});*/
-
-import { CategoriesRepositoryInMemory } from "../../repositories/in-memory/CategoriesRepositoryInMemory";
-import { CreateCategoryUseCase } from "./CreateCategoryUseCase"
-import { AppError } from "../../../../shared/erros/AppError";
-
+import { CategoriesRepositoryInMemory } from "@modules/cars/repositories/in-memory/CategoriesRepositoryInMemory";
+import { AppError } from "@shared/errors/AppError";
+import { CreateCategoryUseCase } from "./CreateCategoryUseCase";
 
 let createCategoryUseCase: CreateCategoryUseCase;
 let categoriesRepositoryInMemory: CategoriesRepositoryInMemory;
@@ -72,7 +53,6 @@ describe("Create Category", () => {
             description: category.description,
         });
     }).rejects.toBeInstanceOf(AppError);
-
 
   }); 
 });
